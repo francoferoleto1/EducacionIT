@@ -1,0 +1,69 @@
+show databases;
+
+create database testbase charset utf8;
+
+drop database juevescurso;
+
+use testbase;
+
+create table users (
+	id int unsigned not null auto_increment,
+    nombre varchar(60) not null,
+    apellido varchar(60) not null,
+    dni varchar(9) not null,
+    unique key(dni),
+    primary key(id)
+);
+
+
+insert into users (nombre, dni, apellido) value ('George','25678099','Washington');
+
+insert into users (nombre, dni, apellido) value ('Jhon','29664289','Del Potro');
+
+create table prueba (
+	id int unsigned not null,
+    primary key(id)
+    
+);
+
+
+
+insert into prueba (id) value (2);
+
+create table facturas (
+	tipo enum('A','B','C') not null default 'A',
+    numero int unsigned not null,
+    primary key(tipo, numero)
+);
+
+insert into facturas (tipo, numero) value ('a', 14745);
+
+
+create user 'Oscar'@'localhost' identified by 'ruggeri';
+
+grant all privileges on testbase.* to 'Oscar'@'localhost';
+
+flush privileges;
+
+create table persona (
+    id int unsigned not null auto_increment,
+    nombre varchar(60) not null,
+    apellido varchar(60) not null,
+    edad int unsigned not null,
+    dni varchar(9) not null,
+    unique key(dni),
+    primary key(id)
+);
+
+insert into persona (nombre, apellido,edad) value ('Jhon', 'Perez', 22);
+
+insert into persona
+    set nombre='Lucia',
+    apellido='Lopez',
+    edad=22;
+
+
+insert into persona
+    set nombre='Jorgelina',
+    apellido='Johansen',
+    edad=9;    
