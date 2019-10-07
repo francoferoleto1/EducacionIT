@@ -1,14 +1,27 @@
-create database nueva;
-use nueva;
+create database empresita;
+use empresita;
 
-create table Autos(
-	marca varchar(40),
-    precio int not null,
-    año int not null,
-    modelo varchar(20) primary key,
-    tipo varchar(20)
+create table Clientes(
+	nombre varchar(40),
+    apellido int not null,
+    clienteID int not null primary key,
+    cuit int not null,
+    direccion varchar(20),
+    comentarios varchar(50)
 );
 
-insert into Autos (marca, precio, año, modelo, tipo) value ('Audi', 2120000, 2014, 'A1', 'Deportivo');
+create table Facturas(
+	tipo enum('A','B','C'),
+    numero int not null,
+    clienteID int not null primary key,
+    articuloID int not null,
+    monto int unsigned not null,
+    fecha date
+);
+
+
+insert into Clientes (nombre, apellido, clienteID, cuit, direccion) value ('Jorge', 'Garcia', 1, 23408798796, 'Lavalle 643');
 
 select marca, modelo, (precio*1.15) as Precio_Nuevo from Autos;
+
+
