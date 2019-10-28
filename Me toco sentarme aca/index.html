@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Gloria a Dios en el Cielo</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="css/estilos.css">
+    <link rel="stylesheet" href="js/js.js">
+
+
+</head>
+
+
+<body id="body">
+
+    
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="index.php" style="color: rebeccapurple;">Talleres Argentina</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="index.html">Home<span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="QuienesSomos.php">¿Por que nosotros?</a>
+        </li>
+        </div>
+      </ul>
+    </div>
+  </nav>
+
+  
+
+
+    <script>
+
+        // var edad = prompt('Ingrese su edad?')
+        // if (edad>=1 && edad < 4) {
+        //     console.log('Bebe')
+        // } else if (edad>=4 && edad < 11){
+        //     console.log('Niño')
+        // } else if (edad>=12 && edad < 18) {
+        //     console.log('Adolescente')
+        // } else if (edad>=18 && edad < 40) {
+        //     console.log('Pre adulto')
+        // }  else if (edad>=40 && edad < 60) {
+        //     console.log('Adulto')
+        // }  else if (edad>=60 && edad < 100) {
+        //     console.log('Viejardo')
+        // } else {
+        //     console.log('Edad Erronea')
+        // }
+          
+        var FyH = new Date()
+        var numeroDeDia = FyH.getDay()
+        //numeroDeDia = 5
+        console.log('Nro. de día', numeroDeDia)
+
+        document.write('<h1>' + FyH.toLocaleString() + '</h1>')
+        document.write('<p>Nro. de día: ' + numeroDeDia + '</p>')
+
+        var nombreDelDia = ''
+        switch (numeroDeDia) {
+            case 0:
+                nombreDelDia = 'Domingo'
+                break
+            
+            case 1:
+            case 2:
+            case 3:
+                nombreDelDia = 'Lunes ó Martes ó Miercoles'
+                break
+/*             case 1:
+                nombreDelDia = 'Lunes'
+                break
+
+            case 2:
+                nombreDelDia = 'Martes'
+                break
+
+            case 3:
+                nombreDelDia = 'Miércoles'
+                break
+ */
+            case 4:
+                nombreDelDia = 'Jueves'
+                break
+
+            case 5:
+                nombreDelDia = 'Viernes'
+                break
+
+            case 6:
+                nombreDelDia = 'Sábado'
+                break
+
+            default:
+                nombreDelDia = 'DESCONOCIDO'
+                break
+        }
+        document.write('<h3>Nombre del día: ' + nombreDelDia + '</h3>')
+
+        /* var refTitulo = document.getElementById('titulo') */
+        /* var refTitulo = document.querySelector('#titulo') */
+        /* var refTitulo = document.querySelector('h1') */
+        var refTitulo = document.querySelector('.titulo')
+        refTitulo.innerHTML = '<u>Hola!!!!</u>'
+        refTitulo.style.color = 'cyan'
+        refTitulo.style.backgroundColor = 'black'
+
+
+    </script>
+
+
+
+
+
+</body>
+
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+
+</html>
