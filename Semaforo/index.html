@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Clase 80 JS</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" href="js/js.js">
+
+
+</head>
+
+<body>
+
+    <div class="caja-semaforo">
+        <div class="luz-semaforo" id="red"></div>
+        <div class="luz-semaforo" id="yellow"></div>
+        <div class="luz-semaforo" id="green"></div>
+    </div>
+    <div id='boton'>
+        <button type="button" class="btn btn-light">Cambiar</button>
+    </div>
+
+    <script>
+
+        function cambiarLuzSemaforo(id, prender) {
+            var color = 'aliceblue'
+            if (prender) color = id
+            // document.getElementById(id).style.backgroundColor = color
+            document.querySelector('#' + id).style.backgroundColor = color
+
+        }
+
+        var estado = 0;
+        function cambiarSemaforo() {
+            console.log(estado)
+
+            switch (estado) {
+                //Rojo
+                case 0:
+                    cambiarLuzSemaforo('red', !false)
+                    cambiarLuzSemaforo('yellow', false)
+                    cambiarLuzSemaforo('green', false)
+                    break;
+                //Rojo amarillo    
+                case 1:
+                    cambiarLuzSemaforo('red', !false)
+                    cambiarLuzSemaforo('yellow', !false)
+                    cambiarLuzSemaforo('green', false)
+                    break;
+                //Verde
+                case 2:
+                    cambiarLuzSemaforo('red', false)
+                    cambiarLuzSemaforo('yellow', false)
+                    cambiarLuzSemaforo('green', !false)
+                    break;
+                //Amarillo    
+                case 3:
+                    cambiarLuzSemaforo('red', false)
+                    cambiarLuzSemaforo('yellow', !false)
+                    cambiarLuzSemaforo('green', false)
+                    break;
+
+                default:
+                    cambiarLuzSemaforo('red', false)
+                    cambiarLuzSemaforo('yellow', false)
+                    cambiarLuzSemaforo('green', false)
+                    break;
+            }
+
+            estado++;
+            if (estado > 3) estado = 0
+        }
+
+        document.querySelector('button').onclick = cambiarSemaforo
+
+        cambiarLuzSemaforo('red', false)
+        cambiarLuzSemaforo('yellow', false)
+        cambiarLuzSemaforo('green', false)
+
+        setInterval((cambiarSemaforo), 200)
+
+
+    </script>
+
+</body>
+
+</html>
