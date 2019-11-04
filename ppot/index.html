@@ -60,6 +60,12 @@
 
         ponerTitulo('Piedra Papel o Tijera')
 
+        $('select').change(cambioOpcionJugador)
+        function cambioOpcionJugador(){
+            var opcionJugador = $('select').val();
+            console.log(opcionJugador)
+        }
+
 
     </script>
 
