@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Jquery</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+
+
+
+
+</head>
+
+<body>
+
+    <h1>texto a cambiar por jquery</h1>
+    <hr>
+    <button id='cambiar' class="btn btn-light">Cambiar</button>
+    <hr>
+    <button id="ocultar" class="btn btn-light">Cambiar</button>
+    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quidem magni, quis blanditiis explicabo recusandae
+        cumque minus numquam quaerat aliquid quam magnam nam ipsa doloribus. Fuga quaerat neque odit cupiditate earum.
+    </p>
+    <hr>
+
+    <select id="">
+        <option value="1">UNO</option>
+        <option value="2">DOS</option>
+        <option value="3">TRES</option>
+    </select>
+
+    <hr>
+    <button class="btn" id="cambiar-imagen">Cambiar imagen</button>
+    <img src="https://cdn3.iconfinder.com/data/icons/animals-105/150/icon_animal_tigre-256.png" width="100" alt="">
+
+
+    <script>
+
+        $('#cambiar').click(cambiar)
+        function cambiar() {
+            $('h1').text('Lo cambio Jquery')
+            console.log($('h1').text())
+            $('h1').css('color', 'red')
+            $('#cambiar').text('Cambiado')
+
+            setTimeout(ocultarBotonCambiar, 2000)
+
+        }
+
+
+        function ocultarBotonCambiar() {
+            $('#cambiar').fadeOut(2000);
+        }
+
+        var ocultar = false
+        $('#ocultar').click(ocultarMostrar)
+        function ocultarMostrar() {
+            ocultar = !ocultar
+            ocultar ? $('p').fadeOut(1000) : $('p').fadeIn(1000)
+
+        }
+
+        $('select').change(mostrarValorSelect)
+        function mostrarValorSelect() {
+            var valor = $('select').val()
+            alert(valor)
+        }
+
+
+        
+        $('#cambiar-imagen').click(cambiarImagen)
+        var selImg = false
+        function cambiarImagen() {
+            selImg = !selImg
+            
+            $('img').attr('src',selImg? 'https://cdn0.iconfinder.com/data/icons/animals-139/128/tiger-wildlife-bengal-carnivore-predator-256.png': "https://cdn3.iconfinder.com/data/icons/animals-105/150/icon_animal_tigre-256.png")
+
+        }
+    </script>
+
+
+</body>
+
+</html>
