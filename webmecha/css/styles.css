@@ -1,0 +1,16 @@
+#jumbo {
+    background-image: url("https://cdn.motor1.com/images/mgl/GRY4q/s1/mid-engined-maserati-rendering.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    background-position-y: -18vh;
+    height: 90vh;
+}
+
+#navbar {
+    background-color: #b3e5fc;
+}
+
+body {
+    background-color: aliceblue;
+}
